@@ -10,6 +10,7 @@ import (
 	"github.com/awslabs/aws-sdk-go/internal/test/unit"
 	"github.com/awslabs/aws-sdk-go/service/s3"
 	"github.com/stretchr/testify/assert"
+	"github.com/awslabs/aws-sdk-go/aws/awserr"
 )
 
 var _ = unit.Imported
@@ -46,8 +47,7 @@ func TestStatusCodeError(t *testing.T) {
 		})
 
 		assert.Error(t, err)
-		aerr := aws.Error(err)
-		assert.Equal(t, test.code, aerr.Code)
-		assert.Equal(t, test.message, aerr.Message)
+		assert.Equal(t, test.code, err.(awserr.Error).Code())
+		assert.Equal(t, test.message, err.(awserr.Error).Message())
 	}
 }

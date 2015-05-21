@@ -40,11 +40,10 @@ func (c *AutoScaling) AttachInstancesRequest(input *AttachInstancesInput) (req *
 // For more information, see Attach Amazon EC2 Instances to Your Existing Auto
 // Scaling Group (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) AttachInstances(input *AttachInstancesInput) (output *AttachInstancesOutput, err error) {
+func (c *AutoScaling) AttachInstances(input *AttachInstancesInput) (*AttachInstancesOutput, error) {
 	req, out := c.AttachInstancesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opAttachInstances *aws.Operation
@@ -87,11 +86,10 @@ func (c *AutoScaling) CompleteLifecycleActionRequest(input *CompleteLifecycleAct
 // action.  For more information, see Auto Scaling Pending State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html)
 // and Auto Scaling Terminating State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) CompleteLifecycleAction(input *CompleteLifecycleActionInput) (output *CompleteLifecycleActionOutput, err error) {
+func (c *AutoScaling) CompleteLifecycleAction(input *CompleteLifecycleActionInput) (*CompleteLifecycleActionOutput, error) {
 	req, out := c.CompleteLifecycleActionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCompleteLifecycleAction *aws.Operation
@@ -124,11 +122,10 @@ func (c *AutoScaling) CreateAutoScalingGroupRequest(input *CreateAutoScalingGrou
 // If you exceed your maximum limit of Auto Scaling groups, which by default
 // is 20 per region, the call fails. For information about viewing and updating
 // these limits, see DescribeAccountLimits.
-func (c *AutoScaling) CreateAutoScalingGroup(input *CreateAutoScalingGroupInput) (output *CreateAutoScalingGroupOutput, err error) {
+func (c *AutoScaling) CreateAutoScalingGroup(input *CreateAutoScalingGroupInput) (*CreateAutoScalingGroupOutput, error) {
 	req, out := c.CreateAutoScalingGroupRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateAutoScalingGroup *aws.Operation
@@ -161,11 +158,10 @@ func (c *AutoScaling) CreateLaunchConfigurationRequest(input *CreateLaunchConfig
 // If you exceed your maximum limit of launch configurations, which by default
 // is 100 per region, the call fails. For information about viewing and updating
 // these limits, see DescribeAccountLimits.
-func (c *AutoScaling) CreateLaunchConfiguration(input *CreateLaunchConfigurationInput) (output *CreateLaunchConfigurationOutput, err error) {
+func (c *AutoScaling) CreateLaunchConfiguration(input *CreateLaunchConfigurationInput) (*CreateLaunchConfigurationOutput, error) {
 	req, out := c.CreateLaunchConfigurationRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateLaunchConfiguration *aws.Operation
@@ -200,11 +196,10 @@ func (c *AutoScaling) CreateOrUpdateTagsRequest(input *CreateOrUpdateTagsInput) 
 // parameters. See the Request Parameters for more information.  For more information,
 // see Add, Modify, or Remove Auto Scaling Group Tags (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) CreateOrUpdateTags(input *CreateOrUpdateTagsInput) (output *CreateOrUpdateTagsOutput, err error) {
+func (c *AutoScaling) CreateOrUpdateTags(input *CreateOrUpdateTagsInput) (*CreateOrUpdateTagsOutput, error) {
 	req, out := c.CreateOrUpdateTagsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateOrUpdateTags *aws.Operation
@@ -239,11 +234,10 @@ func (c *AutoScaling) DeleteAutoScalingGroupRequest(input *DeleteAutoScalingGrou
 // To remove all instances before calling DeleteAutoScalingGroup, you can call
 // UpdateAutoScalingGroup to set the minimum and maximum size of the AutoScalingGroup
 // to zero.
-func (c *AutoScaling) DeleteAutoScalingGroup(input *DeleteAutoScalingGroupInput) (output *DeleteAutoScalingGroupOutput, err error) {
+func (c *AutoScaling) DeleteAutoScalingGroup(input *DeleteAutoScalingGroupInput) (*DeleteAutoScalingGroupOutput, error) {
 	req, out := c.DeleteAutoScalingGroupRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteAutoScalingGroup *aws.Operation
@@ -276,11 +270,10 @@ func (c *AutoScaling) DeleteLaunchConfigurationRequest(input *DeleteLaunchConfig
 // The launch configuration must not be attached to an Auto Scaling group.
 // When this call completes, the launch configuration is no longer available
 // for use.
-func (c *AutoScaling) DeleteLaunchConfiguration(input *DeleteLaunchConfigurationInput) (output *DeleteLaunchConfigurationOutput, err error) {
+func (c *AutoScaling) DeleteLaunchConfiguration(input *DeleteLaunchConfigurationInput) (*DeleteLaunchConfigurationOutput, error) {
 	req, out := c.DeleteLaunchConfigurationRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteLaunchConfiguration *aws.Operation
@@ -312,11 +305,10 @@ func (c *AutoScaling) DeleteLifecycleHookRequest(input *DeleteLifecycleHookInput
 //
 // If there are any outstanding lifecycle actions, they are completed first
 // (ABANDON for launching instances, CONTINUE for terminating instances).
-func (c *AutoScaling) DeleteLifecycleHook(input *DeleteLifecycleHookInput) (output *DeleteLifecycleHookOutput, err error) {
+func (c *AutoScaling) DeleteLifecycleHook(input *DeleteLifecycleHookInput) (*DeleteLifecycleHookOutput, error) {
 	req, out := c.DeleteLifecycleHookRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteLifecycleHook *aws.Operation
@@ -345,11 +337,10 @@ func (c *AutoScaling) DeleteNotificationConfigurationRequest(input *DeleteNotifi
 }
 
 // Deletes the specified notification.
-func (c *AutoScaling) DeleteNotificationConfiguration(input *DeleteNotificationConfigurationInput) (output *DeleteNotificationConfigurationOutput, err error) {
+func (c *AutoScaling) DeleteNotificationConfiguration(input *DeleteNotificationConfigurationInput) (*DeleteNotificationConfigurationOutput, error) {
 	req, out := c.DeleteNotificationConfigurationRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteNotificationConfiguration *aws.Operation
@@ -378,11 +369,10 @@ func (c *AutoScaling) DeletePolicyRequest(input *DeletePolicyInput) (req *aws.Re
 }
 
 // Deletes the specified Auto Scaling policy.
-func (c *AutoScaling) DeletePolicy(input *DeletePolicyInput) (output *DeletePolicyOutput, err error) {
+func (c *AutoScaling) DeletePolicy(input *DeletePolicyInput) (*DeletePolicyOutput, error) {
 	req, out := c.DeletePolicyRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeletePolicy *aws.Operation
@@ -411,11 +401,10 @@ func (c *AutoScaling) DeleteScheduledActionRequest(input *DeleteScheduledActionI
 }
 
 // Deletes the specified scheduled action.
-func (c *AutoScaling) DeleteScheduledAction(input *DeleteScheduledActionInput) (output *DeleteScheduledActionOutput, err error) {
+func (c *AutoScaling) DeleteScheduledAction(input *DeleteScheduledActionInput) (*DeleteScheduledActionOutput, error) {
 	req, out := c.DeleteScheduledActionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteScheduledAction *aws.Operation
@@ -444,11 +433,10 @@ func (c *AutoScaling) DeleteTagsRequest(input *DeleteTagsInput) (req *aws.Reques
 }
 
 // Deletes the specified tags.
-func (c *AutoScaling) DeleteTags(input *DeleteTagsInput) (output *DeleteTagsOutput, err error) {
+func (c *AutoScaling) DeleteTags(input *DeleteTagsInput) (*DeleteTagsOutput, error) {
 	req, out := c.DeleteTagsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteTags *aws.Operation
@@ -480,11 +468,10 @@ func (c *AutoScaling) DescribeAccountLimitsRequest(input *DescribeAccountLimitsI
 //
 // For information about requesting an increase in these limits, see AWS Service
 // Limits (http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html).
-func (c *AutoScaling) DescribeAccountLimits(input *DescribeAccountLimitsInput) (output *DescribeAccountLimitsOutput, err error) {
+func (c *AutoScaling) DescribeAccountLimits(input *DescribeAccountLimitsInput) (*DescribeAccountLimitsOutput, error) {
 	req, out := c.DescribeAccountLimitsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAccountLimits *aws.Operation
@@ -513,11 +500,10 @@ func (c *AutoScaling) DescribeAdjustmentTypesRequest(input *DescribeAdjustmentTy
 }
 
 // Lists the policy adjustment types for use with PutScalingPolicy.
-func (c *AutoScaling) DescribeAdjustmentTypes(input *DescribeAdjustmentTypesInput) (output *DescribeAdjustmentTypesOutput, err error) {
+func (c *AutoScaling) DescribeAdjustmentTypes(input *DescribeAdjustmentTypesInput) (*DescribeAdjustmentTypesOutput, error) {
 	req, out := c.DescribeAdjustmentTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAdjustmentTypes *aws.Operation
@@ -551,11 +537,10 @@ func (c *AutoScaling) DescribeAutoScalingGroupsRequest(input *DescribeAutoScalin
 // You can specify a maximum number of items to be returned with a single call.
 // If there are more items to return, the call returns a token. To get the next
 // set of items, repeat the call with the returned token in the NextToken parameter.
-func (c *AutoScaling) DescribeAutoScalingGroups(input *DescribeAutoScalingGroupsInput) (output *DescribeAutoScalingGroupsOutput, err error) {
+func (c *AutoScaling) DescribeAutoScalingGroups(input *DescribeAutoScalingGroupsInput) (*DescribeAutoScalingGroupsOutput, error) {
 	req, out := c.DescribeAutoScalingGroupsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAutoScalingGroups *aws.Operation
@@ -590,11 +575,10 @@ func (c *AutoScaling) DescribeAutoScalingInstancesRequest(input *DescribeAutoSca
 // default, a call returns up to 20 instances. If there are more items to return,
 // the call returns a token. To get the next set of items, repeat the call with
 // the returned token in the NextToken parameter.
-func (c *AutoScaling) DescribeAutoScalingInstances(input *DescribeAutoScalingInstancesInput) (output *DescribeAutoScalingInstancesOutput, err error) {
+func (c *AutoScaling) DescribeAutoScalingInstances(input *DescribeAutoScalingInstancesInput) (*DescribeAutoScalingInstancesOutput, error) {
 	req, out := c.DescribeAutoScalingInstancesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAutoScalingInstances *aws.Operation
@@ -623,11 +607,10 @@ func (c *AutoScaling) DescribeAutoScalingNotificationTypesRequest(input *Describ
 }
 
 // Lists the notification types that are supported by Auto Scaling.
-func (c *AutoScaling) DescribeAutoScalingNotificationTypes(input *DescribeAutoScalingNotificationTypesInput) (output *DescribeAutoScalingNotificationTypesOutput, err error) {
+func (c *AutoScaling) DescribeAutoScalingNotificationTypes(input *DescribeAutoScalingNotificationTypesInput) (*DescribeAutoScalingNotificationTypesOutput, error) {
 	req, out := c.DescribeAutoScalingNotificationTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAutoScalingNotificationTypes *aws.Operation
@@ -661,11 +644,10 @@ func (c *AutoScaling) DescribeLaunchConfigurationsRequest(input *DescribeLaunchC
 // You can specify a maximum number of items to be returned with a single call.
 // If there are more items to return, the call returns a token. To get the next
 // set of items, repeat the call with the returned token in the NextToken parameter.
-func (c *AutoScaling) DescribeLaunchConfigurations(input *DescribeLaunchConfigurationsInput) (output *DescribeLaunchConfigurationsOutput, err error) {
+func (c *AutoScaling) DescribeLaunchConfigurations(input *DescribeLaunchConfigurationsInput) (*DescribeLaunchConfigurationsOutput, error) {
 	req, out := c.DescribeLaunchConfigurationsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeLaunchConfigurations *aws.Operation
@@ -694,11 +676,10 @@ func (c *AutoScaling) DescribeLifecycleHookTypesRequest(input *DescribeLifecycle
 }
 
 // Describes the available types of lifecycle hooks.
-func (c *AutoScaling) DescribeLifecycleHookTypes(input *DescribeLifecycleHookTypesInput) (output *DescribeLifecycleHookTypesOutput, err error) {
+func (c *AutoScaling) DescribeLifecycleHookTypes(input *DescribeLifecycleHookTypesInput) (*DescribeLifecycleHookTypesOutput, error) {
 	req, out := c.DescribeLifecycleHookTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeLifecycleHookTypes *aws.Operation
@@ -727,11 +708,10 @@ func (c *AutoScaling) DescribeLifecycleHooksRequest(input *DescribeLifecycleHook
 }
 
 // Describes the lifecycle hooks for the specified Auto Scaling group.
-func (c *AutoScaling) DescribeLifecycleHooks(input *DescribeLifecycleHooksInput) (output *DescribeLifecycleHooksOutput, err error) {
+func (c *AutoScaling) DescribeLifecycleHooks(input *DescribeLifecycleHooksInput) (*DescribeLifecycleHooksOutput, error) {
 	req, out := c.DescribeLifecycleHooksRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeLifecycleHooks *aws.Operation
@@ -764,11 +744,10 @@ func (c *AutoScaling) DescribeMetricCollectionTypesRequest(input *DescribeMetric
 //
 //  The GroupStandbyInstances metric is not returned by default. You must explicitly
 // request it when calling EnableMetricsCollection.
-func (c *AutoScaling) DescribeMetricCollectionTypes(input *DescribeMetricCollectionTypesInput) (output *DescribeMetricCollectionTypesOutput, err error) {
+func (c *AutoScaling) DescribeMetricCollectionTypes(input *DescribeMetricCollectionTypesInput) (*DescribeMetricCollectionTypesOutput, error) {
 	req, out := c.DescribeMetricCollectionTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeMetricCollectionTypes *aws.Operation
@@ -798,11 +777,10 @@ func (c *AutoScaling) DescribeNotificationConfigurationsRequest(input *DescribeN
 
 // Describes the notification actions associated with the specified Auto Scaling
 // group.
-func (c *AutoScaling) DescribeNotificationConfigurations(input *DescribeNotificationConfigurationsInput) (output *DescribeNotificationConfigurationsOutput, err error) {
+func (c *AutoScaling) DescribeNotificationConfigurations(input *DescribeNotificationConfigurationsInput) (*DescribeNotificationConfigurationsOutput, error) {
 	req, out := c.DescribeNotificationConfigurationsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeNotificationConfigurations *aws.Operation
@@ -835,11 +813,10 @@ func (c *AutoScaling) DescribePoliciesRequest(input *DescribePoliciesInput) (req
 // You can specify a maximum number of items to be returned with a single call.
 // If there are more items to return, the call returns a token. To get the next
 // set of items, repeat the call with the returned token in the NextToken parameter.
-func (c *AutoScaling) DescribePolicies(input *DescribePoliciesInput) (output *DescribePoliciesOutput, err error) {
+func (c *AutoScaling) DescribePolicies(input *DescribePoliciesInput) (*DescribePoliciesOutput, error) {
 	req, out := c.DescribePoliciesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribePolicies *aws.Operation
@@ -875,11 +852,10 @@ func (c *AutoScaling) DescribeScalingActivitiesRequest(input *DescribeScalingAct
 // You can specify a maximum number of items to be returned with a single call.
 // If there are more items to return, the call returns a token. To get the next
 // set of items, repeat the call with the returned token in the NextToken parameter.
-func (c *AutoScaling) DescribeScalingActivities(input *DescribeScalingActivitiesInput) (output *DescribeScalingActivitiesOutput, err error) {
+func (c *AutoScaling) DescribeScalingActivities(input *DescribeScalingActivitiesInput) (*DescribeScalingActivitiesOutput, error) {
 	req, out := c.DescribeScalingActivitiesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeScalingActivities *aws.Operation
@@ -909,11 +885,10 @@ func (c *AutoScaling) DescribeScalingProcessTypesRequest(input *DescribeScalingP
 
 // Returns scaling process types for use in the ResumeProcesses and SuspendProcesses
 // actions.
-func (c *AutoScaling) DescribeScalingProcessTypes(input *DescribeScalingProcessTypesInput) (output *DescribeScalingProcessTypesOutput, err error) {
+func (c *AutoScaling) DescribeScalingProcessTypes(input *DescribeScalingProcessTypesInput) (*DescribeScalingProcessTypesOutput, error) {
 	req, out := c.DescribeScalingProcessTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeScalingProcessTypes *aws.Operation
@@ -943,11 +918,10 @@ func (c *AutoScaling) DescribeScheduledActionsRequest(input *DescribeScheduledAc
 
 // Lists the actions scheduled for your Auto Scaling group that haven't been
 // executed. To list the actions that were already executed, use DescribeScalingActivities.
-func (c *AutoScaling) DescribeScheduledActions(input *DescribeScheduledActionsInput) (output *DescribeScheduledActionsOutput, err error) {
+func (c *AutoScaling) DescribeScheduledActions(input *DescribeScheduledActionsInput) (*DescribeScheduledActionsOutput, error) {
 	req, out := c.DescribeScheduledActionsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeScheduledActions *aws.Operation
@@ -985,11 +959,10 @@ func (c *AutoScaling) DescribeTagsRequest(input *DescribeTagsInput) (req *aws.Re
 // You can also specify multiple filters. The result includes information for
 // a particular tag only if it matches all the filters. If there's no match,
 // no special message is returned.
-func (c *AutoScaling) DescribeTags(input *DescribeTagsInput) (output *DescribeTagsOutput, err error) {
+func (c *AutoScaling) DescribeTags(input *DescribeTagsInput) (*DescribeTagsOutput, error) {
 	req, out := c.DescribeTagsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeTags *aws.Operation
@@ -1018,11 +991,10 @@ func (c *AutoScaling) DescribeTerminationPolicyTypesRequest(input *DescribeTermi
 }
 
 // Lists the termination policies supported by Auto Scaling.
-func (c *AutoScaling) DescribeTerminationPolicyTypes(input *DescribeTerminationPolicyTypesInput) (output *DescribeTerminationPolicyTypesOutput, err error) {
+func (c *AutoScaling) DescribeTerminationPolicyTypes(input *DescribeTerminationPolicyTypesInput) (*DescribeTerminationPolicyTypesOutput, error) {
 	req, out := c.DescribeTerminationPolicyTypesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeTerminationPolicyTypes *aws.Operation
@@ -1057,11 +1029,10 @@ func (c *AutoScaling) DetachInstancesRequest(input *DetachInstancesInput) (req *
 // For more information, see Detach EC2 Instances from Your Auto Scaling Group
 // (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) DetachInstances(input *DetachInstancesInput) (output *DetachInstancesOutput, err error) {
+func (c *AutoScaling) DetachInstances(input *DetachInstancesInput) (*DetachInstancesOutput, error) {
 	req, out := c.DetachInstancesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDetachInstances *aws.Operation
@@ -1091,11 +1062,10 @@ func (c *AutoScaling) DisableMetricsCollectionRequest(input *DisableMetricsColle
 
 // Disables monitoring of the specified metrics for the specified Auto Scaling
 // group.
-func (c *AutoScaling) DisableMetricsCollection(input *DisableMetricsCollectionInput) (output *DisableMetricsCollectionOutput, err error) {
+func (c *AutoScaling) DisableMetricsCollection(input *DisableMetricsCollectionInput) (*DisableMetricsCollectionOutput, error) {
 	req, out := c.DisableMetricsCollectionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDisableMetricsCollection *aws.Operation
@@ -1128,11 +1098,10 @@ func (c *AutoScaling) EnableMetricsCollectionRequest(input *EnableMetricsCollect
 //
 // You can only enable metrics collection if InstanceMonitoring in the launch
 // configuration for the group is set to True.
-func (c *AutoScaling) EnableMetricsCollection(input *EnableMetricsCollectionInput) (output *EnableMetricsCollectionOutput, err error) {
+func (c *AutoScaling) EnableMetricsCollection(input *EnableMetricsCollectionInput) (*EnableMetricsCollectionOutput, error) {
 	req, out := c.EnableMetricsCollectionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opEnableMetricsCollection *aws.Operation
@@ -1164,11 +1133,10 @@ func (c *AutoScaling) EnterStandbyRequest(input *EnterStandbyInput) (req *aws.Re
 //
 // For more information, see Auto Scaling InService State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) EnterStandby(input *EnterStandbyInput) (output *EnterStandbyOutput, err error) {
+func (c *AutoScaling) EnterStandby(input *EnterStandbyInput) (*EnterStandbyOutput, error) {
 	req, out := c.EnterStandbyRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opEnterStandby *aws.Operation
@@ -1197,11 +1165,10 @@ func (c *AutoScaling) ExecutePolicyRequest(input *ExecutePolicyInput) (req *aws.
 }
 
 // Executes the specified policy.
-func (c *AutoScaling) ExecutePolicy(input *ExecutePolicyInput) (output *ExecutePolicyOutput, err error) {
+func (c *AutoScaling) ExecutePolicy(input *ExecutePolicyInput) (*ExecutePolicyOutput, error) {
 	req, out := c.ExecutePolicyRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opExecutePolicy *aws.Operation
@@ -1233,11 +1200,10 @@ func (c *AutoScaling) ExitStandbyRequest(input *ExitStandbyInput) (req *aws.Requ
 //
 // For more information, see Auto Scaling InService State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) ExitStandby(input *ExitStandbyInput) (output *ExitStandbyOutput, err error) {
+func (c *AutoScaling) ExitStandby(input *ExitStandbyInput) (*ExitStandbyOutput, error) {
 	req, out := c.ExitStandbyRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opExitStandby *aws.Operation
@@ -1283,11 +1249,10 @@ func (c *AutoScaling) PutLifecycleHookRequest(input *PutLifecycleHookInput) (req
 // action.  For more information, see Auto Scaling Pending State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html)
 // and Auto Scaling Terminating State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) PutLifecycleHook(input *PutLifecycleHookInput) (output *PutLifecycleHookOutput, err error) {
+func (c *AutoScaling) PutLifecycleHook(input *PutLifecycleHookInput) (*PutLifecycleHookOutput, error) {
 	req, out := c.PutLifecycleHookRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opPutLifecycleHook *aws.Operation
@@ -1324,11 +1289,10 @@ func (c *AutoScaling) PutNotificationConfigurationRequest(input *PutNotification
 // in the Auto Scaling Developer Guide.
 //
 // This configuration overwrites an existing configuration.
-func (c *AutoScaling) PutNotificationConfiguration(input *PutNotificationConfigurationInput) (output *PutNotificationConfigurationOutput, err error) {
+func (c *AutoScaling) PutNotificationConfiguration(input *PutNotificationConfigurationInput) (*PutNotificationConfigurationOutput, error) {
 	req, out := c.PutNotificationConfigurationRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opPutNotificationConfiguration *aws.Operation
@@ -1360,11 +1324,10 @@ func (c *AutoScaling) PutScalingPolicyRequest(input *PutScalingPolicyInput) (req
 // policy, use the existing policy name and set the parameters you want to change.
 // Any existing parameter not changed in an update to an existing policy is
 // not changed in this update request.
-func (c *AutoScaling) PutScalingPolicy(input *PutScalingPolicyInput) (output *PutScalingPolicyOutput, err error) {
+func (c *AutoScaling) PutScalingPolicy(input *PutScalingPolicyInput) (*PutScalingPolicyOutput, error) {
 	req, out := c.PutScalingPolicyRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opPutScalingPolicy *aws.Operation
@@ -1401,11 +1364,10 @@ func (c *AutoScaling) PutScheduledUpdateGroupActionRequest(input *PutScheduledUp
 //
 //  Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ"
 // format in UTC/GMT only.
-func (c *AutoScaling) PutScheduledUpdateGroupAction(input *PutScheduledUpdateGroupActionInput) (output *PutScheduledUpdateGroupActionOutput, err error) {
+func (c *AutoScaling) PutScheduledUpdateGroupAction(input *PutScheduledUpdateGroupActionInput) (*PutScheduledUpdateGroupActionOutput, error) {
 	req, out := c.PutScheduledUpdateGroupActionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opPutScheduledUpdateGroupAction *aws.Operation
@@ -1449,11 +1411,10 @@ func (c *AutoScaling) RecordLifecycleActionHeartbeatRequest(input *RecordLifecyc
 // action.  For more information, see Auto Scaling Pending State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html)
 // and Auto Scaling Terminating State (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) RecordLifecycleActionHeartbeat(input *RecordLifecycleActionHeartbeatInput) (output *RecordLifecycleActionHeartbeatOutput, err error) {
+func (c *AutoScaling) RecordLifecycleActionHeartbeat(input *RecordLifecycleActionHeartbeatInput) (*RecordLifecycleActionHeartbeatOutput, error) {
 	req, out := c.RecordLifecycleActionHeartbeatRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opRecordLifecycleActionHeartbeat *aws.Operation
@@ -1486,11 +1447,10 @@ func (c *AutoScaling) ResumeProcessesRequest(input *ScalingProcessQuery) (req *a
 // parameter. To resume all processes, omit the ScalingProcesses parameter.
 // For more information, see Suspend and Resume Auto Scaling Processes (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) ResumeProcesses(input *ScalingProcessQuery) (output *ResumeProcessesOutput, err error) {
+func (c *AutoScaling) ResumeProcesses(input *ScalingProcessQuery) (*ResumeProcessesOutput, error) {
 	req, out := c.ResumeProcessesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opResumeProcesses *aws.Operation
@@ -1519,11 +1479,10 @@ func (c *AutoScaling) SetDesiredCapacityRequest(input *SetDesiredCapacityInput) 
 }
 
 // Sets the size of the specified AutoScalingGroup.
-func (c *AutoScaling) SetDesiredCapacity(input *SetDesiredCapacityInput) (output *SetDesiredCapacityOutput, err error) {
+func (c *AutoScaling) SetDesiredCapacity(input *SetDesiredCapacityInput) (*SetDesiredCapacityOutput, error) {
 	req, out := c.SetDesiredCapacityRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSetDesiredCapacity *aws.Operation
@@ -1555,11 +1514,10 @@ func (c *AutoScaling) SetInstanceHealthRequest(input *SetInstanceHealthInput) (r
 //
 // For more information, see Health Checks (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) SetInstanceHealth(input *SetInstanceHealthInput) (output *SetInstanceHealthOutput, err error) {
+func (c *AutoScaling) SetInstanceHealth(input *SetInstanceHealthInput) (*SetInstanceHealthOutput, error) {
 	req, out := c.SetInstanceHealthRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSetInstanceHealth *aws.Operation
@@ -1598,11 +1556,10 @@ func (c *AutoScaling) SuspendProcessesRequest(input *ScalingProcessQuery) (req *
 //
 // For more information, see Suspend and Resume Auto Scaling Processes (http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html)
 // in the Auto Scaling Developer Guide.
-func (c *AutoScaling) SuspendProcesses(input *ScalingProcessQuery) (output *SuspendProcessesOutput, err error) {
+func (c *AutoScaling) SuspendProcesses(input *ScalingProcessQuery) (*SuspendProcessesOutput, error) {
 	req, out := c.SuspendProcessesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSuspendProcesses *aws.Operation
@@ -1635,11 +1592,10 @@ func (c *AutoScaling) TerminateInstanceInAutoScalingGroupRequest(input *Terminat
 //
 // This call simply makes a termination request. The instances is not terminated
 // immediately.
-func (c *AutoScaling) TerminateInstanceInAutoScalingGroup(input *TerminateInstanceInAutoScalingGroupInput) (output *TerminateInstanceInAutoScalingGroupOutput, err error) {
+func (c *AutoScaling) TerminateInstanceInAutoScalingGroup(input *TerminateInstanceInAutoScalingGroupInput) (*TerminateInstanceInAutoScalingGroupOutput, error) {
 	req, out := c.TerminateInstanceInAutoScalingGroupRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opTerminateInstanceInAutoScalingGroup *aws.Operation
@@ -1691,11 +1647,10 @@ func (c *AutoScaling) UpdateAutoScalingGroupRequest(input *UpdateAutoScalingGrou
 //
 //   All other optional parameters are left unchanged if not passed in the
 // request.
-func (c *AutoScaling) UpdateAutoScalingGroup(input *UpdateAutoScalingGroupInput) (output *UpdateAutoScalingGroupOutput, err error) {
+func (c *AutoScaling) UpdateAutoScalingGroup(input *UpdateAutoScalingGroupInput) (*UpdateAutoScalingGroupOutput, error) {
 	req, out := c.UpdateAutoScalingGroupRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateAutoScalingGroup *aws.Operation

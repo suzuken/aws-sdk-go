@@ -43,11 +43,10 @@ func (c *Route53) AssociateVPCWithHostedZoneRequest(input *AssociateVPCWithHoste
 // AssociateVPCWithHostedZoneResponse element that contains ChangeInfo for you
 // to track the progress of the AssociateVPCWithHostedZoneRequest you made.
 // See GetChange operation for how to track the progress of your change.
-func (c *Route53) AssociateVPCWithHostedZone(input *AssociateVPCWithHostedZoneInput) (output *AssociateVPCWithHostedZoneOutput, err error) {
+func (c *Route53) AssociateVPCWithHostedZone(input *AssociateVPCWithHostedZoneInput) (*AssociateVPCWithHostedZoneOutput, error) {
 	req, out := c.AssociateVPCWithHostedZoneRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opAssociateVPCWithHostedZone *aws.Operation
@@ -103,11 +102,10 @@ func (c *Route53) ChangeResourceRecordSetsRequest(input *ChangeResourceRecordSet
 //
 // The sum of the number of characters (including spaces) in all Value elements
 // in a request cannot exceed 32,000 characters.
-func (c *Route53) ChangeResourceRecordSets(input *ChangeResourceRecordSetsInput) (output *ChangeResourceRecordSetsOutput, err error) {
+func (c *Route53) ChangeResourceRecordSets(input *ChangeResourceRecordSetsInput) (*ChangeResourceRecordSetsOutput, error) {
 	req, out := c.ChangeResourceRecordSetsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opChangeResourceRecordSets *aws.Operation
@@ -135,11 +133,10 @@ func (c *Route53) ChangeTagsForResourceRequest(input *ChangeTagsForResourceInput
 	return
 }
 
-func (c *Route53) ChangeTagsForResource(input *ChangeTagsForResourceInput) (output *ChangeTagsForResourceOutput, err error) {
+func (c *Route53) ChangeTagsForResource(input *ChangeTagsForResourceInput) (*ChangeTagsForResourceOutput, error) {
 	req, out := c.ChangeTagsForResourceRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opChangeTagsForResource *aws.Operation
@@ -173,11 +170,10 @@ func (c *Route53) CreateHealthCheckRequest(input *CreateHealthCheckInput) (req *
 // resource. The request body must include an XML document with a CreateHealthCheckRequest
 // element. The response returns the CreateHealthCheckResponse element that
 // contains metadata about the health check.
-func (c *Route53) CreateHealthCheck(input *CreateHealthCheckInput) (output *CreateHealthCheckOutput, err error) {
+func (c *Route53) CreateHealthCheck(input *CreateHealthCheckInput) (*CreateHealthCheckOutput, error) {
 	req, out := c.CreateHealthCheckRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateHealthCheck *aws.Operation
@@ -226,11 +222,10 @@ func (c *Route53) CreateHostedZoneRequest(input *CreateHostedZoneInput) (req *aw
 // When trying to create a hosted zone using a reusable delegation set, you
 // could specify an optional DelegationSetId, and Route53 would assign those
 // 4 NS records for the zone, instead of alloting a new one.
-func (c *Route53) CreateHostedZone(input *CreateHostedZoneInput) (output *CreateHostedZoneOutput, err error) {
+func (c *Route53) CreateHostedZone(input *CreateHostedZoneInput) (*CreateHostedZoneOutput, error) {
 	req, out := c.CreateHostedZoneRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateHostedZone *aws.Operation
@@ -267,11 +262,10 @@ func (c *Route53) CreateReusableDelegationSetRequest(input *CreateReusableDelega
 //
 //  If the optional parameter HostedZoneId is specified, it marks the delegationSet
 // associated with that particular hosted zone as reusable.
-func (c *Route53) CreateReusableDelegationSet(input *CreateReusableDelegationSetInput) (output *CreateReusableDelegationSetOutput, err error) {
+func (c *Route53) CreateReusableDelegationSet(input *CreateReusableDelegationSetInput) (*CreateReusableDelegationSetOutput, error) {
 	req, out := c.CreateReusableDelegationSetRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateReusableDelegationSet *aws.Operation
@@ -309,11 +303,10 @@ func (c *Route53) DeleteHealthCheckRequest(input *DeleteHealthCheckInput) (req *
 // with resource record sets, Route 53 will deny your request with a HealthCheckInUse
 // error. For information about disassociating the records from your health
 // check, see ChangeResourceRecordSets.
-func (c *Route53) DeleteHealthCheck(input *DeleteHealthCheckInput) (output *DeleteHealthCheckOutput, err error) {
+func (c *Route53) DeleteHealthCheck(input *DeleteHealthCheckInput) (*DeleteHealthCheckOutput, error) {
 	req, out := c.DeleteHealthCheckRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteHealthCheck *aws.Operation
@@ -355,11 +348,10 @@ func (c *Route53) DeleteHostedZoneRequest(input *DeleteHostedZoneInput) (req *aw
 // other resource record sets, Route 53 will deny your request with a HostedZoneNotEmpty
 // error. For information about deleting records from your hosted zone, see
 // ChangeResourceRecordSets.
-func (c *Route53) DeleteHostedZone(input *DeleteHostedZoneInput) (output *DeleteHostedZoneOutput, err error) {
+func (c *Route53) DeleteHostedZone(input *DeleteHostedZoneInput) (*DeleteHostedZoneOutput, error) {
 	req, out := c.DeleteHostedZoneRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteHostedZone *aws.Operation
@@ -396,11 +388,10 @@ func (c *Route53) DeleteReusableDelegationSetRequest(input *DeleteReusableDelega
 // zones, you must delete them before you can delete your reusable delegation
 // set. If you try to delete a reusable delegation set that contains associated
 // hosted zones, Route 53 will deny your request with a DelegationSetInUse error.
-func (c *Route53) DeleteReusableDelegationSet(input *DeleteReusableDelegationSetInput) (output *DeleteReusableDelegationSetOutput, err error) {
+func (c *Route53) DeleteReusableDelegationSet(input *DeleteReusableDelegationSetInput) (*DeleteReusableDelegationSetOutput, error) {
 	req, out := c.DeleteReusableDelegationSetRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteReusableDelegationSet *aws.Operation
@@ -436,11 +427,10 @@ func (c *Route53) DisassociateVPCFromHostedZoneRequest(input *DisassociateVPCFro
 // the DisassociateVPCFromHostedZoneResponse element that contains ChangeInfo
 // for you to track the progress of the DisassociateVPCFromHostedZoneRequest
 // you made. See GetChange operation for how to track the progress of your change.
-func (c *Route53) DisassociateVPCFromHostedZone(input *DisassociateVPCFromHostedZoneInput) (output *DisassociateVPCFromHostedZoneOutput, err error) {
+func (c *Route53) DisassociateVPCFromHostedZone(input *DisassociateVPCFromHostedZoneInput) (*DisassociateVPCFromHostedZoneOutput, error) {
 	req, out := c.DisassociateVPCFromHostedZoneRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDisassociateVPCFromHostedZone *aws.Operation
@@ -477,11 +467,10 @@ func (c *Route53) GetChangeRequest(input *GetChangeInput) (req *aws.Request, out
 //
 // - INSYNC indicates that the changes have replicated to all Amazon Route
 // 53 DNS servers.
-func (c *Route53) GetChange(input *GetChangeInput) (output *GetChangeOutput, err error) {
+func (c *Route53) GetChange(input *GetChangeInput) (*GetChangeOutput, error) {
 	req, out := c.GetChangeRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetChange *aws.Operation
@@ -513,11 +502,10 @@ func (c *Route53) GetCheckerIPRangesRequest(input *GetCheckerIPRangesInput) (req
 // to check the health of your resources, send a GET request to the 2013-04-01/checkeripranges
 // resource. You can use these IP addresses to configure router and firewall
 // rules to allow health checkers to check the health of your resources.
-func (c *Route53) GetCheckerIPRanges(input *GetCheckerIPRangesInput) (output *GetCheckerIPRangesOutput, err error) {
+func (c *Route53) GetCheckerIPRanges(input *GetCheckerIPRangesInput) (*GetCheckerIPRangesOutput, error) {
 	req, out := c.GetCheckerIPRangesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetCheckerIPRanges *aws.Operation
@@ -548,11 +536,10 @@ func (c *Route53) GetGeoLocationRequest(input *GetGeoLocationInput) (req *aws.Re
 // To retrieve a single geo location, send a GET request to the 2013-04-01/geolocation
 // resource with one of these options: continentcode | countrycode | countrycode
 // and subdivisioncode.
-func (c *Route53) GetGeoLocation(input *GetGeoLocationInput) (output *GetGeoLocationOutput, err error) {
+func (c *Route53) GetGeoLocation(input *GetGeoLocationInput) (*GetGeoLocationOutput, error) {
 	req, out := c.GetGeoLocationRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetGeoLocation *aws.Operation
@@ -582,11 +569,10 @@ func (c *Route53) GetHealthCheckRequest(input *GetHealthCheckInput) (req *aws.Re
 
 // To retrieve the health check, send a GET request to the 2013-04-01/healthcheck/health
 // check ID resource.
-func (c *Route53) GetHealthCheck(input *GetHealthCheckInput) (output *GetHealthCheckOutput, err error) {
+func (c *Route53) GetHealthCheck(input *GetHealthCheckInput) (*GetHealthCheckOutput, error) {
 	req, out := c.GetHealthCheckRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHealthCheck *aws.Operation
@@ -616,11 +602,10 @@ func (c *Route53) GetHealthCheckCountRequest(input *GetHealthCheckCountInput) (r
 
 // To retrieve a count of all your health checks, send a GET request to the
 // 2013-04-01/healthcheckcount resource.
-func (c *Route53) GetHealthCheckCount(input *GetHealthCheckCountInput) (output *GetHealthCheckCountOutput, err error) {
+func (c *Route53) GetHealthCheckCount(input *GetHealthCheckCountInput) (*GetHealthCheckCountOutput, error) {
 	req, out := c.GetHealthCheckCountRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHealthCheckCount *aws.Operation
@@ -652,11 +637,10 @@ func (c *Route53) GetHealthCheckLastFailureReasonRequest(input *GetHealthCheckLa
 // most recently (if at all), you can get the failure reason for the most recent
 // failure. Send a GET request to the 2013-04-01/healthcheck/health check ID/lastfailurereason
 // resource.
-func (c *Route53) GetHealthCheckLastFailureReason(input *GetHealthCheckLastFailureReasonInput) (output *GetHealthCheckLastFailureReasonOutput, err error) {
+func (c *Route53) GetHealthCheckLastFailureReason(input *GetHealthCheckLastFailureReasonInput) (*GetHealthCheckLastFailureReasonOutput, error) {
 	req, out := c.GetHealthCheckLastFailureReasonRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHealthCheckLastFailureReason *aws.Operation
@@ -687,11 +671,10 @@ func (c *Route53) GetHealthCheckStatusRequest(input *GetHealthCheckStatusInput) 
 // To retrieve the health check status, send a GET request to the 2013-04-01/healthcheck/health
 // check ID/status resource. You can use this call to get a health check's current
 // status.
-func (c *Route53) GetHealthCheckStatus(input *GetHealthCheckStatusInput) (output *GetHealthCheckStatusOutput, err error) {
+func (c *Route53) GetHealthCheckStatus(input *GetHealthCheckStatusInput) (*GetHealthCheckStatusOutput, error) {
 	req, out := c.GetHealthCheckStatusRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHealthCheckStatus *aws.Operation
@@ -723,11 +706,10 @@ func (c *Route53) GetHostedZoneRequest(input *GetHostedZoneInput) (req *aws.Requ
 // 2013-04-01/hostedzone/hosted zone ID resource. The delegation set is the
 // four Route 53 name servers that were assigned to the hosted zone when you
 // created it.
-func (c *Route53) GetHostedZone(input *GetHostedZoneInput) (output *GetHostedZoneOutput, err error) {
+func (c *Route53) GetHostedZone(input *GetHostedZoneInput) (*GetHostedZoneOutput, error) {
 	req, out := c.GetHostedZoneRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHostedZone *aws.Operation
@@ -757,11 +739,10 @@ func (c *Route53) GetHostedZoneCountRequest(input *GetHostedZoneCountInput) (req
 
 // To retrieve a count of all your hosted zones, send a GET request to the 2013-04-01/hostedzonecount
 // resource.
-func (c *Route53) GetHostedZoneCount(input *GetHostedZoneCountInput) (output *GetHostedZoneCountOutput, err error) {
+func (c *Route53) GetHostedZoneCount(input *GetHostedZoneCountInput) (*GetHostedZoneCountOutput, error) {
 	req, out := c.GetHostedZoneCountRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetHostedZoneCount *aws.Operation
@@ -791,11 +772,10 @@ func (c *Route53) GetReusableDelegationSetRequest(input *GetReusableDelegationSe
 
 // To retrieve the reusable delegation set, send a GET request to the 2013-04-01/delegationset/delegation
 // set ID resource.
-func (c *Route53) GetReusableDelegationSet(input *GetReusableDelegationSetInput) (output *GetReusableDelegationSetOutput, err error) {
+func (c *Route53) GetReusableDelegationSet(input *GetReusableDelegationSetInput) (*GetReusableDelegationSetOutput, error) {
 	req, out := c.GetReusableDelegationSetRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetReusableDelegationSet *aws.Operation
@@ -836,11 +816,10 @@ func (c *Route53) ListGeoLocationsRequest(input *ListGeoLocationsInput) (req *aw
 // will be populated. You can pass these as parameters to StartContinentCode,
 // StartCountryCode, StartSubdivisionCode to control the geo location that the
 // list begins with.
-func (c *Route53) ListGeoLocations(input *ListGeoLocationsInput) (output *ListGeoLocationsOutput, err error) {
+func (c *Route53) ListGeoLocations(input *ListGeoLocationsInput) (*ListGeoLocationsOutput, error) {
 	req, out := c.ListGeoLocationsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListGeoLocations *aws.Operation
@@ -877,11 +856,10 @@ func (c *Route53) ListHealthChecksRequest(input *ListHealthChecksInput) (req *aw
 //
 //  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to
 // a value greater than 100, Amazon Route 53 returns only the first 100.
-func (c *Route53) ListHealthChecks(input *ListHealthChecksInput) (output *ListHealthChecksOutput, err error) {
+func (c *Route53) ListHealthChecks(input *ListHealthChecksInput) (*ListHealthChecksOutput, error) {
 	req, out := c.ListHealthChecksRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListHealthChecks *aws.Operation
@@ -918,11 +896,10 @@ func (c *Route53) ListHostedZonesRequest(input *ListHostedZonesInput) (req *aws.
 //
 //  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to
 // a value greater than 100, Amazon Route 53 returns only the first 100.
-func (c *Route53) ListHostedZones(input *ListHostedZonesInput) (output *ListHostedZonesOutput, err error) {
+func (c *Route53) ListHostedZones(input *ListHostedZonesInput) (*ListHostedZonesOutput, error) {
 	req, out := c.ListHostedZonesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListHostedZones *aws.Operation
@@ -961,11 +938,10 @@ func (c *Route53) ListHostedZonesByNameRequest(input *ListHostedZonesByNameInput
 //
 //  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to
 // a value greater than 100, Amazon Route 53 returns only the first 100.
-func (c *Route53) ListHostedZonesByName(input *ListHostedZonesByNameInput) (output *ListHostedZonesByNameOutput, err error) {
+func (c *Route53) ListHostedZonesByName(input *ListHostedZonesByNameInput) (*ListHostedZonesByNameOutput, error) {
 	req, out := c.ListHostedZonesByNameRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListHostedZonesByName *aws.Operation
@@ -1031,11 +1007,10 @@ func (c *Route53) ListResourceRecordSetsRequest(input *ListResourceRecordSetsInp
 // To be precise, if a single process makes a call to ChangeResourceRecordSets
 // and receives a successful response, the effects of that change will be visible
 // in a subsequent call to ListResourceRecordSets by that process.
-func (c *Route53) ListResourceRecordSets(input *ListResourceRecordSetsInput) (output *ListResourceRecordSetsOutput, err error) {
+func (c *Route53) ListResourceRecordSets(input *ListResourceRecordSetsInput) (*ListResourceRecordSetsOutput, error) {
 	req, out := c.ListResourceRecordSetsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListResourceRecordSets *aws.Operation
@@ -1073,11 +1048,10 @@ func (c *Route53) ListReusableDelegationSetsRequest(input *ListReusableDelegatio
 //
 //  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to
 // a value greater than 100, Amazon Route 53 returns only the first 100.
-func (c *Route53) ListReusableDelegationSets(input *ListReusableDelegationSetsInput) (output *ListReusableDelegationSetsOutput, err error) {
+func (c *Route53) ListReusableDelegationSets(input *ListReusableDelegationSetsInput) (*ListReusableDelegationSetsOutput, error) {
 	req, out := c.ListReusableDelegationSetsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListReusableDelegationSets *aws.Operation
@@ -1105,11 +1079,10 @@ func (c *Route53) ListTagsForResourceRequest(input *ListTagsForResourceInput) (r
 	return
 }
 
-func (c *Route53) ListTagsForResource(input *ListTagsForResourceInput) (output *ListTagsForResourceOutput, err error) {
+func (c *Route53) ListTagsForResource(input *ListTagsForResourceInput) (*ListTagsForResourceOutput, error) {
 	req, out := c.ListTagsForResourceRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListTagsForResource *aws.Operation
@@ -1137,11 +1110,10 @@ func (c *Route53) ListTagsForResourcesRequest(input *ListTagsForResourcesInput) 
 	return
 }
 
-func (c *Route53) ListTagsForResources(input *ListTagsForResourcesInput) (output *ListTagsForResourcesOutput, err error) {
+func (c *Route53) ListTagsForResources(input *ListTagsForResourcesInput) (*ListTagsForResourcesOutput, error) {
 	req, out := c.ListTagsForResourcesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListTagsForResources *aws.Operation
@@ -1175,11 +1147,10 @@ func (c *Route53) UpdateHealthCheckRequest(input *UpdateHealthCheckInput) (req *
 // check ID resource. The request body must include an XML document with an
 // UpdateHealthCheckRequest element. The response returns an UpdateHealthCheckResponse
 // element, which contains metadata about the health check.
-func (c *Route53) UpdateHealthCheck(input *UpdateHealthCheckInput) (output *UpdateHealthCheckOutput, err error) {
+func (c *Route53) UpdateHealthCheck(input *UpdateHealthCheckInput) (*UpdateHealthCheckOutput, error) {
 	req, out := c.UpdateHealthCheckRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateHealthCheck *aws.Operation
@@ -1212,11 +1183,10 @@ func (c *Route53) UpdateHostedZoneCommentRequest(input *UpdateHostedZoneCommentI
 // element. The response to this request includes the modified HostedZone element.
 //
 //  The comment can have a maximum length of 256 characters.
-func (c *Route53) UpdateHostedZoneComment(input *UpdateHostedZoneCommentInput) (output *UpdateHostedZoneCommentOutput, err error) {
+func (c *Route53) UpdateHostedZoneComment(input *UpdateHostedZoneCommentInput) (*UpdateHostedZoneCommentOutput, error) {
 	req, out := c.UpdateHostedZoneCommentRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateHostedZoneComment *aws.Operation

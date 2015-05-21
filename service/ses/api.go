@@ -39,11 +39,10 @@ func (c *SES) DeleteIdentityRequest(input *DeleteIdentityInput) (req *aws.Reques
 // verified identities.
 //
 // This action is throttled at one request per second.
-func (c *SES) DeleteIdentity(input *DeleteIdentityInput) (output *DeleteIdentityOutput, err error) {
+func (c *SES) DeleteIdentity(input *DeleteIdentityInput) (*DeleteIdentityOutput, error) {
 	req, out := c.DeleteIdentityRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteIdentity *aws.Operation
@@ -76,11 +75,10 @@ func (c *SES) DeleteVerifiedEmailAddressRequest(input *DeleteVerifiedEmailAddres
 // The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012
 // release of Domain Verification. The DeleteIdentity action is now preferred.
 // This action is throttled at one request per second.
-func (c *SES) DeleteVerifiedEmailAddress(input *DeleteVerifiedEmailAddressInput) (output *DeleteVerifiedEmailAddressOutput, err error) {
+func (c *SES) DeleteVerifiedEmailAddress(input *DeleteVerifiedEmailAddressInput) (*DeleteVerifiedEmailAddressOutput, error) {
 	req, out := c.DeleteVerifiedEmailAddressRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteVerifiedEmailAddress *aws.Operation
@@ -125,11 +123,10 @@ func (c *SES) GetIdentityDKIMAttributesRequest(input *GetIdentityDKIMAttributesI
 //
 // For more information about creating DNS records using DKIM tokens, go to
 // the Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html).
-func (c *SES) GetIdentityDKIMAttributes(input *GetIdentityDKIMAttributesInput) (output *GetIdentityDKIMAttributesOutput, err error) {
+func (c *SES) GetIdentityDKIMAttributes(input *GetIdentityDKIMAttributesInput) (*GetIdentityDKIMAttributesOutput, error) {
 	req, out := c.GetIdentityDKIMAttributesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetIdentityDKIMAttributes *aws.Operation
@@ -164,11 +161,10 @@ func (c *SES) GetIdentityNotificationAttributesRequest(input *GetIdentityNotific
 //
 // For more information about using notifications with Amazon SES, see the
 // Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
-func (c *SES) GetIdentityNotificationAttributes(input *GetIdentityNotificationAttributesInput) (output *GetIdentityNotificationAttributesOutput, err error) {
+func (c *SES) GetIdentityNotificationAttributes(input *GetIdentityNotificationAttributesInput) (*GetIdentityNotificationAttributesOutput, error) {
 	req, out := c.GetIdentityNotificationAttributesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetIdentityNotificationAttributes *aws.Operation
@@ -201,11 +197,10 @@ func (c *SES) GetIdentityVerificationAttributesRequest(input *GetIdentityVerific
 // each identity.
 //
 // This action is throttled at one request per second.
-func (c *SES) GetIdentityVerificationAttributes(input *GetIdentityVerificationAttributesInput) (output *GetIdentityVerificationAttributesOutput, err error) {
+func (c *SES) GetIdentityVerificationAttributes(input *GetIdentityVerificationAttributesInput) (*GetIdentityVerificationAttributesOutput, error) {
 	req, out := c.GetIdentityVerificationAttributesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetIdentityVerificationAttributes *aws.Operation
@@ -236,11 +231,10 @@ func (c *SES) GetSendQuotaRequest(input *GetSendQuotaInput) (req *aws.Request, o
 // Returns the user's current sending limits.
 //
 // This action is throttled at one request per second.
-func (c *SES) GetSendQuota(input *GetSendQuotaInput) (output *GetSendQuotaOutput, err error) {
+func (c *SES) GetSendQuota(input *GetSendQuotaInput) (*GetSendQuotaOutput, error) {
 	req, out := c.GetSendQuotaRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetSendQuota *aws.Operation
@@ -274,11 +268,10 @@ func (c *SES) GetSendStatisticsRequest(input *GetSendStatisticsInput) (req *aws.
 // Each data point in the list contains statistics for a 15-minute interval.
 //
 // This action is throttled at one request per second.
-func (c *SES) GetSendStatistics(input *GetSendStatisticsInput) (output *GetSendStatisticsOutput, err error) {
+func (c *SES) GetSendStatistics(input *GetSendStatisticsInput) (*GetSendStatisticsOutput, error) {
 	req, out := c.GetSendStatisticsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opGetSendStatistics *aws.Operation
@@ -310,11 +303,10 @@ func (c *SES) ListIdentitiesRequest(input *ListIdentitiesInput) (req *aws.Reques
 // for a specific AWS Account, regardless of verification status.
 //
 // This action is throttled at one request per second.
-func (c *SES) ListIdentities(input *ListIdentitiesInput) (output *ListIdentitiesOutput, err error) {
+func (c *SES) ListIdentities(input *ListIdentitiesInput) (*ListIdentitiesOutput, error) {
 	req, out := c.ListIdentitiesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListIdentities *aws.Operation
@@ -347,11 +339,10 @@ func (c *SES) ListVerifiedEmailAddressesRequest(input *ListVerifiedEmailAddresse
 // The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012
 // release of Domain Verification. The ListIdentities action is now preferred.
 // This action is throttled at one request per second.
-func (c *SES) ListVerifiedEmailAddresses(input *ListVerifiedEmailAddressesInput) (output *ListVerifiedEmailAddressesOutput, err error) {
+func (c *SES) ListVerifiedEmailAddresses(input *ListVerifiedEmailAddressesInput) (*ListVerifiedEmailAddressesOutput, error) {
 	req, out := c.ListVerifiedEmailAddressesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListVerifiedEmailAddresses *aws.Operation
@@ -399,11 +390,10 @@ func (c *SES) SendEmailRequest(input *SendEmailInput) (req *aws.Request, output 
 // and BCC:) is counted against your sending quota - the maximum number of emails
 // you can send in a 24-hour period. For information about your sending quota,
 // go to the Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html).
-func (c *SES) SendEmail(input *SendEmailInput) (output *SendEmailOutput, err error) {
+func (c *SES) SendEmail(input *SendEmailInput) (*SendEmailOutput, error) {
 	req, out := c.SendEmailRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSendEmail *aws.Operation
@@ -458,11 +448,10 @@ func (c *SES) SendRawEmailRequest(input *SendRawEmailInput) (req *aws.Request, o
 // and BCC:) is counted against your sending quota - the maximum number of emails
 // you can send in a 24-hour period. For information about your sending quota,
 // go to the Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html).
-func (c *SES) SendRawEmail(input *SendRawEmailInput) (output *SendRawEmailOutput, err error) {
+func (c *SES) SendRawEmail(input *SendRawEmailInput) (*SendRawEmailOutput, error) {
 	req, out := c.SendRawEmailRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSendRawEmail *aws.Operation
@@ -504,11 +493,10 @@ func (c *SES) SetIdentityDKIMEnabledRequest(input *SetIdentityDKIMEnabledInput) 
 //
 // For more information about Easy DKIM signing, go to the Amazon SES Developer
 // Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
-func (c *SES) SetIdentityDKIMEnabled(input *SetIdentityDKIMEnabledInput) (output *SetIdentityDKIMEnabledOutput, err error) {
+func (c *SES) SetIdentityDKIMEnabled(input *SetIdentityDKIMEnabledInput) (*SetIdentityDKIMEnabledOutput, error) {
 	req, out := c.SetIdentityDKIMEnabledRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSetIdentityDKIMEnabled *aws.Operation
@@ -547,11 +535,10 @@ func (c *SES) SetIdentityFeedbackForwardingEnabledRequest(input *SetIdentityFeed
 //
 // For more information about using notifications with Amazon SES, see the
 // Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
-func (c *SES) SetIdentityFeedbackForwardingEnabled(input *SetIdentityFeedbackForwardingEnabledInput) (output *SetIdentityFeedbackForwardingEnabledOutput, err error) {
+func (c *SES) SetIdentityFeedbackForwardingEnabled(input *SetIdentityFeedbackForwardingEnabledInput) (*SetIdentityFeedbackForwardingEnabledOutput, error) {
 	req, out := c.SetIdentityFeedbackForwardingEnabledRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSetIdentityFeedbackForwardingEnabled *aws.Operation
@@ -589,11 +576,10 @@ func (c *SES) SetIdentityNotificationTopicRequest(input *SetIdentityNotification
 //
 // For more information about feedback notification, see the Amazon SES Developer
 // Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
-func (c *SES) SetIdentityNotificationTopic(input *SetIdentityNotificationTopicInput) (output *SetIdentityNotificationTopicOutput, err error) {
+func (c *SES) SetIdentityNotificationTopic(input *SetIdentityNotificationTopicInput) (*SetIdentityNotificationTopicOutput, error) {
 	req, out := c.SetIdentityNotificationTopicRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opSetIdentityNotificationTopic *aws.Operation
@@ -636,11 +622,10 @@ func (c *SES) VerifyDomainDKIMRequest(input *VerifyDomainDKIMInput) (req *aws.Re
 //
 // For more information about creating DNS records using DKIM tokens, go to
 // the Amazon SES Developer Guide (http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html).
-func (c *SES) VerifyDomainDKIM(input *VerifyDomainDKIMInput) (output *VerifyDomainDKIMOutput, err error) {
+func (c *SES) VerifyDomainDKIM(input *VerifyDomainDKIMInput) (*VerifyDomainDKIMOutput, error) {
 	req, out := c.VerifyDomainDKIMRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opVerifyDomainDKIM *aws.Operation
@@ -671,11 +656,10 @@ func (c *SES) VerifyDomainIdentityRequest(input *VerifyDomainIdentityInput) (req
 // Verifies a domain.
 //
 // This action is throttled at one request per second.
-func (c *SES) VerifyDomainIdentity(input *VerifyDomainIdentityInput) (output *VerifyDomainIdentityOutput, err error) {
+func (c *SES) VerifyDomainIdentity(input *VerifyDomainIdentityInput) (*VerifyDomainIdentityOutput, error) {
 	req, out := c.VerifyDomainIdentityRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opVerifyDomainIdentity *aws.Operation
@@ -709,11 +693,10 @@ func (c *SES) VerifyEmailAddressRequest(input *VerifyEmailAddressInput) (req *aw
 // The VerifyEmailAddress action is deprecated as of the May 15, 2012 release
 // of Domain Verification. The VerifyEmailIdentity action is now preferred.
 // This action is throttled at one request per second.
-func (c *SES) VerifyEmailAddress(input *VerifyEmailAddressInput) (output *VerifyEmailAddressOutput, err error) {
+func (c *SES) VerifyEmailAddress(input *VerifyEmailAddressInput) (*VerifyEmailAddressOutput, error) {
 	req, out := c.VerifyEmailAddressRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opVerifyEmailAddress *aws.Operation
@@ -745,11 +728,10 @@ func (c *SES) VerifyEmailIdentityRequest(input *VerifyEmailIdentityInput) (req *
 // to be sent to the specified address.
 //
 // This action is throttled at one request per second.
-func (c *SES) VerifyEmailIdentity(input *VerifyEmailIdentityInput) (output *VerifyEmailIdentityOutput, err error) {
+func (c *SES) VerifyEmailIdentity(input *VerifyEmailIdentityInput) (*VerifyEmailIdentityOutput, error) {
 	req, out := c.VerifyEmailIdentityRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opVerifyEmailIdentity *aws.Operation

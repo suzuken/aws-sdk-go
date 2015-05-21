@@ -75,11 +75,10 @@ func (c *{{ .API.StructName }}) {{ .ExportedName }}Request(` +
 }
 
 {{ .Docstring }}func (c *{{ .API.StructName }}) {{ .ExportedName }}(` +
-	`input {{ .InputRef.GoType }}) (output {{ .OutputRef.GoType }}, err error) {
+	`input {{ .InputRef.GoType }}) ({{ .OutputRef.GoType }}, error) {
 	req, out := c.{{ .ExportedName }}Request(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var op{{ .ExportedName }} *aws.Operation
@@ -121,12 +120,15 @@ func Example{{ .API.StructName }}_{{ .ExportedName }}() {
 	{{ .ExampleInput }}
 	resp, err := svc.{{ .ExportedName }}(params)
 
-	if awserr := aws.Error(err); awserr != nil {
-		// A service error occurred.
-		fmt.Println("Error:", awserr.Code, awserr.Message)
-	} else if err != nil {
-		// A non-service error occurred.
-		panic(err)
+	if awsErr, ok := err.(awserr.Error); ok {
+		// Generic AWS Error with Code, Message, and original error (if any)
+		fmt.Println(awsErr.Code(), awsErr.Message(), awsErr.OrigErr())
+		if reqErr, ok := err.(awserr.RequestFailure); ok {
+			// A service error occurred
+			fmt.Println(reqErr.Code(), reqErr.Message(), reqErr.StatusCode(), reqErr.RequestID())
+		}
+	} else {
+		fmt.Println(err.Error())
 	}
 
 	// Pretty-print the response data.

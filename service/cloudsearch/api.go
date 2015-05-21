@@ -38,11 +38,10 @@ func (c *CloudSearch) BuildSuggestersRequest(input *BuildSuggestersInput) (req *
 // Indexes the search suggestions. For more information, see Configuring Suggesters
 // (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters)
 // in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) BuildSuggesters(input *BuildSuggestersInput) (output *BuildSuggestersOutput, err error) {
+func (c *CloudSearch) BuildSuggesters(input *BuildSuggestersInput) (*BuildSuggestersOutput, error) {
 	req, out := c.BuildSuggestersRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opBuildSuggesters *aws.Operation
@@ -73,11 +72,10 @@ func (c *CloudSearch) CreateDomainRequest(input *CreateDomainInput) (req *aws.Re
 // Creates a new search domain. For more information, see Creating a Search
 // Domain (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) CreateDomain(input *CreateDomainInput) (output *CreateDomainOutput, err error) {
+func (c *CloudSearch) CreateDomain(input *CreateDomainInput) (*CreateDomainOutput, error) {
 	req, out := c.CreateDomainRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opCreateDomain *aws.Operation
@@ -109,11 +107,10 @@ func (c *CloudSearch) DefineAnalysisSchemeRequest(input *DefineAnalysisSchemeInp
 // field to define language-specific text processing options. For more information,
 // see Configuring Analysis Schemes (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DefineAnalysisScheme(input *DefineAnalysisSchemeInput) (output *DefineAnalysisSchemeOutput, err error) {
+func (c *CloudSearch) DefineAnalysisScheme(input *DefineAnalysisSchemeInput) (*DefineAnalysisSchemeOutput, error) {
 	req, out := c.DefineAnalysisSchemeRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDefineAnalysisScheme *aws.Operation
@@ -145,11 +142,10 @@ func (c *CloudSearch) DefineExpressionRequest(input *DefineExpressionInput) (req
 // and modify existing ones. If the expression exists, the new configuration
 // replaces the old one. For more information, see Configuring Expressions (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DefineExpression(input *DefineExpressionInput) (output *DefineExpressionOutput, err error) {
+func (c *CloudSearch) DefineExpression(input *DefineExpressionInput) (*DefineExpressionOutput, error) {
 	req, out := c.DefineExpressionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDefineExpression *aws.Operation
@@ -185,11 +181,10 @@ func (c *CloudSearch) DefineIndexFieldRequest(input *DefineIndexFieldInput) (req
 // If the field exists, the new configuration replaces the old one. For more
 // information, see Configuring Index Fields (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DefineIndexField(input *DefineIndexFieldInput) (output *DefineIndexFieldOutput, err error) {
+func (c *CloudSearch) DefineIndexField(input *DefineIndexFieldInput) (*DefineIndexFieldOutput, error) {
 	req, out := c.DefineIndexFieldRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDefineIndexField *aws.Operation
@@ -223,11 +218,10 @@ func (c *CloudSearch) DefineSuggesterRequest(input *DefineSuggesterInput) (req *
 // matches and a unique name for the suggester. For more information, see Getting
 // Search Suggestions (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DefineSuggester(input *DefineSuggesterInput) (output *DefineSuggesterOutput, err error) {
+func (c *CloudSearch) DefineSuggester(input *DefineSuggesterInput) (*DefineSuggesterOutput, error) {
 	req, out := c.DefineSuggesterRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDefineSuggester *aws.Operation
@@ -258,11 +252,10 @@ func (c *CloudSearch) DeleteAnalysisSchemeRequest(input *DeleteAnalysisSchemeInp
 // Deletes an analysis scheme. For more information, see Configuring Analysis
 // Schemes (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DeleteAnalysisScheme(input *DeleteAnalysisSchemeInput) (output *DeleteAnalysisSchemeOutput, err error) {
+func (c *CloudSearch) DeleteAnalysisScheme(input *DeleteAnalysisSchemeInput) (*DeleteAnalysisSchemeOutput, error) {
 	req, out := c.DeleteAnalysisSchemeRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteAnalysisScheme *aws.Operation
@@ -294,11 +287,10 @@ func (c *CloudSearch) DeleteDomainRequest(input *DeleteDomainInput) (req *aws.Re
 // been deleted, it cannot be recovered. For more information, see Deleting
 // a Search Domain (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DeleteDomain(input *DeleteDomainInput) (output *DeleteDomainOutput, err error) {
+func (c *CloudSearch) DeleteDomain(input *DeleteDomainInput) (*DeleteDomainOutput, error) {
 	req, out := c.DeleteDomainRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteDomain *aws.Operation
@@ -329,11 +321,10 @@ func (c *CloudSearch) DeleteExpressionRequest(input *DeleteExpressionInput) (req
 // Removes an Expression from the search domain. For more information, see Configuring
 // Expressions (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DeleteExpression(input *DeleteExpressionInput) (output *DeleteExpressionOutput, err error) {
+func (c *CloudSearch) DeleteExpression(input *DeleteExpressionInput) (*DeleteExpressionOutput, error) {
 	req, out := c.DeleteExpressionRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteExpression *aws.Operation
@@ -364,11 +355,10 @@ func (c *CloudSearch) DeleteIndexFieldRequest(input *DeleteIndexFieldInput) (req
 // Removes an IndexField from the search domain. For more information, see Configuring
 // Index Fields (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DeleteIndexField(input *DeleteIndexFieldInput) (output *DeleteIndexFieldOutput, err error) {
+func (c *CloudSearch) DeleteIndexField(input *DeleteIndexFieldInput) (*DeleteIndexFieldOutput, error) {
 	req, out := c.DeleteIndexFieldRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteIndexField *aws.Operation
@@ -399,11 +389,10 @@ func (c *CloudSearch) DeleteSuggesterRequest(input *DeleteSuggesterInput) (req *
 // Deletes a suggester. For more information, see Getting Search Suggestions
 // (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DeleteSuggester(input *DeleteSuggesterInput) (output *DeleteSuggesterOutput, err error) {
+func (c *CloudSearch) DeleteSuggester(input *DeleteSuggesterInput) (*DeleteSuggesterOutput, error) {
 	req, out := c.DeleteSuggesterRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDeleteSuggester *aws.Operation
@@ -438,11 +427,10 @@ func (c *CloudSearch) DescribeAnalysisSchemesRequest(input *DescribeAnalysisSche
 // to true to show the active configuration and exclude pending changes. For
 // more information, see Configuring Analysis Schemes (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeAnalysisSchemes(input *DescribeAnalysisSchemesInput) (output *DescribeAnalysisSchemesOutput, err error) {
+func (c *CloudSearch) DescribeAnalysisSchemes(input *DescribeAnalysisSchemesInput) (*DescribeAnalysisSchemesOutput, error) {
 	req, out := c.DescribeAnalysisSchemesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAnalysisSchemes *aws.Operation
@@ -475,11 +463,10 @@ func (c *CloudSearch) DescribeAvailabilityOptionsRequest(input *DescribeAvailabi
 // to show the active configuration and exclude pending changes. For more information,
 // see Configuring Availability Options (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeAvailabilityOptions(input *DescribeAvailabilityOptionsInput) (output *DescribeAvailabilityOptionsOutput, err error) {
+func (c *CloudSearch) DescribeAvailabilityOptions(input *DescribeAvailabilityOptionsInput) (*DescribeAvailabilityOptionsOutput, error) {
 	req, out := c.DescribeAvailabilityOptionsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeAvailabilityOptions *aws.Operation
@@ -513,11 +500,10 @@ func (c *CloudSearch) DescribeDomainsRequest(input *DescribeDomainsInput) (req *
 // domain's search endpoint: q=matchall&amp;q.parser=structured&amp;size=0.
 // For more information, see Getting Information about a Search Domain (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeDomains(input *DescribeDomainsInput) (output *DescribeDomainsOutput, err error) {
+func (c *CloudSearch) DescribeDomains(input *DescribeDomainsInput) (*DescribeDomainsOutput, error) {
 	req, out := c.DescribeDomainsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeDomains *aws.Operation
@@ -551,11 +537,10 @@ func (c *CloudSearch) DescribeExpressionsRequest(input *DescribeExpressionsInput
 // to show the active configuration and exclude pending changes. For more information,
 // see Configuring Expressions (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeExpressions(input *DescribeExpressionsInput) (output *DescribeExpressionsOutput, err error) {
+func (c *CloudSearch) DescribeExpressions(input *DescribeExpressionsInput) (*DescribeExpressionsOutput, error) {
 	req, out := c.DescribeExpressionsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeExpressions *aws.Operation
@@ -589,11 +574,10 @@ func (c *CloudSearch) DescribeIndexFieldsRequest(input *DescribeIndexFieldsInput
 // to true to show the active configuration and exclude pending changes. For
 // more information, see Getting Domain Information (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeIndexFields(input *DescribeIndexFieldsInput) (output *DescribeIndexFieldsOutput, err error) {
+func (c *CloudSearch) DescribeIndexFields(input *DescribeIndexFieldsInput) (*DescribeIndexFieldsOutput, error) {
 	req, out := c.DescribeIndexFieldsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeIndexFields *aws.Operation
@@ -625,11 +609,10 @@ func (c *CloudSearch) DescribeScalingParametersRequest(input *DescribeScalingPar
 // specify the desired search instance type and replication count. For more
 // information, see Configuring Scaling Options (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeScalingParameters(input *DescribeScalingParametersInput) (output *DescribeScalingParametersOutput, err error) {
+func (c *CloudSearch) DescribeScalingParameters(input *DescribeScalingParametersInput) (*DescribeScalingParametersOutput, error) {
 	req, out := c.DescribeScalingParametersRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeScalingParameters *aws.Operation
@@ -663,11 +646,10 @@ func (c *CloudSearch) DescribeServiceAccessPoliciesRequest(input *DescribeServic
 // and exclude pending changes. For more information, see Configuring Access
 // for a Search Domain (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeServiceAccessPolicies(input *DescribeServiceAccessPoliciesInput) (output *DescribeServiceAccessPoliciesOutput, err error) {
+func (c *CloudSearch) DescribeServiceAccessPolicies(input *DescribeServiceAccessPoliciesInput) (*DescribeServiceAccessPoliciesOutput, error) {
 	req, out := c.DescribeServiceAccessPoliciesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeServiceAccessPolicies *aws.Operation
@@ -702,11 +684,10 @@ func (c *CloudSearch) DescribeSuggestersRequest(input *DescribeSuggestersInput) 
 // to show the active configuration and exclude pending changes. For more information,
 // see Getting Search Suggestions (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) DescribeSuggesters(input *DescribeSuggestersInput) (output *DescribeSuggestersOutput, err error) {
+func (c *CloudSearch) DescribeSuggesters(input *DescribeSuggestersInput) (*DescribeSuggestersOutput, error) {
 	req, out := c.DescribeSuggestersRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opDescribeSuggesters *aws.Operation
@@ -737,11 +718,10 @@ func (c *CloudSearch) IndexDocumentsRequest(input *IndexDocumentsInput) (req *aw
 // Tells the search domain to start indexing its documents using the latest
 // indexing options. This operation must be invoked to activate options whose
 // OptionStatus is RequiresIndexDocuments.
-func (c *CloudSearch) IndexDocuments(input *IndexDocumentsInput) (output *IndexDocumentsOutput, err error) {
+func (c *CloudSearch) IndexDocuments(input *IndexDocumentsInput) (*IndexDocumentsOutput, error) {
 	req, out := c.IndexDocumentsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opIndexDocuments *aws.Operation
@@ -770,11 +750,10 @@ func (c *CloudSearch) ListDomainNamesRequest(input *ListDomainNamesInput) (req *
 }
 
 // Lists all search domains owned by an account.
-func (c *CloudSearch) ListDomainNames(input *ListDomainNamesInput) (output *ListDomainNamesOutput, err error) {
+func (c *CloudSearch) ListDomainNames(input *ListDomainNamesInput) (*ListDomainNamesOutput, error) {
 	req, out := c.ListDomainNamesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opListDomainNames *aws.Operation
@@ -808,11 +787,10 @@ func (c *CloudSearch) UpdateAvailabilityOptionsRequest(input *UpdateAvailability
 // Changes to the Multi-AZ option can take about half an hour to become active.
 // For more information, see Configuring Availability Options (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) UpdateAvailabilityOptions(input *UpdateAvailabilityOptionsInput) (output *UpdateAvailabilityOptionsOutput, err error) {
+func (c *CloudSearch) UpdateAvailabilityOptions(input *UpdateAvailabilityOptionsInput) (*UpdateAvailabilityOptionsOutput, error) {
 	req, out := c.UpdateAvailabilityOptionsRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateAvailabilityOptions *aws.Operation
@@ -848,11 +826,10 @@ func (c *CloudSearch) UpdateScalingParametersRequest(input *UpdateScalingParamet
 // Availability Zone. For more information, see Configuring Scaling Options
 // (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
 // target="_blank) in the Amazon CloudSearch Developer Guide.
-func (c *CloudSearch) UpdateScalingParameters(input *UpdateScalingParametersInput) (output *UpdateScalingParametersOutput, err error) {
+func (c *CloudSearch) UpdateScalingParameters(input *UpdateScalingParametersInput) (*UpdateScalingParametersOutput, error) {
 	req, out := c.UpdateScalingParametersRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateScalingParameters *aws.Operation
@@ -884,11 +861,10 @@ func (c *CloudSearch) UpdateServiceAccessPoliciesRequest(input *UpdateServiceAcc
 // and search endpoints. For more information, see  Configuring Access for an
 // Amazon CloudSearch Domain (http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
 // target="_blank).
-func (c *CloudSearch) UpdateServiceAccessPolicies(input *UpdateServiceAccessPoliciesInput) (output *UpdateServiceAccessPoliciesOutput, err error) {
+func (c *CloudSearch) UpdateServiceAccessPolicies(input *UpdateServiceAccessPoliciesInput) (*UpdateServiceAccessPoliciesOutput, error) {
 	req, out := c.UpdateServiceAccessPoliciesRequest(input)
-	output = out
-	err = req.Send()
-	return
+	err := req.Send()
+	return out, err
 }
 
 var opUpdateServiceAccessPolicies *aws.Operation
